@@ -99,5 +99,5 @@ ESX.RegisterCommand('screfresh', 'admin', function(xPlayer, args, showError)
 end, false, {help = 'Refresh esx_scoreboard names!'})
 
 ESX.RegisterCommand('sctoggle', 'admin', function(xPlayer, args, showError)
-	xPlayer.triggerEvent('esx_scoreboard:toggleID', source)
+	xPlayer.triggerEvent('esx_scoreboard:toggleID')
 end, false, {help = 'Toggle ID column on the scoreboard!'})
