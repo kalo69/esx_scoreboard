@@ -81,7 +81,7 @@ function UpdatePlayerTable(connectedPlayers)
 			police = police + 1
 		elseif v.job == 'taxi' then
 			taxi = taxi + 1
-		elseif v.job == 'mecano' then
+		elseif v.job == 'mechanic' then
 			mechanic = mechanic + 1
 		elseif v.job == 'cardealer' then
 			cardealer = cardealer + 1
@@ -128,9 +128,7 @@ Citizen.CreateThread(function()
 
 		if IsPauseMenuActive() and not IsPaused then
 			IsPaused = true
-			SendNUIMessage({
-				action  = 'close'
-			})
+			SendNUIMessage({action  = 'close'})
 		elseif not IsPauseMenuActive() and IsPaused then
 			IsPaused = false
 		end
@@ -138,9 +136,7 @@ Citizen.CreateThread(function()
 end)
 
 function ToggleScoreBoard()
-	SendNUIMessage({
-		action = 'toggle'
-	})
+	SendNUIMessage({action = 'toggle'})
 end
 
 Citizen.CreateThread(function()
