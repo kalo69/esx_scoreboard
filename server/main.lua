@@ -66,7 +66,13 @@ end
 
 function UpdatePing()
 	for playerId,v in pairs(connectedPlayers) do
-		v.ping = GetPlayerPing(playerId)
+		local ping = GetPlayerPing(playerId)
+
+		if ping and ping > 0 then
+			v.ping = ping
+		else
+			v.ping = 'missing'
+		end
 	end
 
 	TriggerClientEvent('esx_scoreboard:updatePing', -1, connectedPlayers)

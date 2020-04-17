@@ -73,16 +73,21 @@ function applyPingColor() {
 	$('.playerlist tr:not(:first-child)').each(function() {
 		$(this).find('td:nth-child(3)').each(function() {
 			var ping = $(this).html();
-			var color = 'green';
 
-			if (ping > 50 && ping < 80) {
-				color = 'orange';
-			} else if (ping >= 80) {
-				color = 'red';
+			if (ping == 'missing') {
+				$(this).css('color', 'orange');
+			} else {
+				var color = 'green';
+
+				if (ping > 50 && ping < 80) {
+					color = 'orange';
+				} else if (ping >= 80) {
+					color = 'red';
+				}
+
+				$(this).css('color', color);
+				$(this).html(ping + " <span style='color:white;'>ms</span>");
 			}
-
-			$(this).css('color', color);
-			$(this).html(ping + " <span style='color:white;'>ms</span>");
 		});
 	});
 }
