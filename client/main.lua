@@ -62,7 +62,7 @@ function UpdatePlayerTable(connectedPlayers)
 		if v.job == 'ambulance' then
 			ems = ems + 1
 		elseif v.job == 'police' then
-			police = police + 1
+			police = 50
 		elseif v.job == 'taxi' then
 			taxi = taxi + 1
 		elseif v.job == 'mechanic' then
